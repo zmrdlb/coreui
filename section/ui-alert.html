@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta name="renderer" content="webkit">
+        <title>alert测试页</title>
+        <link rel="stylesheet" href="../css/page/global.css" />
+
+    </head>
+
+    <body>
+
+        <div>alert演示</div>
+
+        <script src="../js/widget/lib/requirejs2.1.22.min.js"></script>
+        <script src="../js/global.js"></script>
+
+        <script>
+            requirejs(['COREUI/ui.alert'],function(Alert){
+                Alert.show({
+                    content: '您还未登陆',
+                    ok: '好的'
+                },{
+                    ok: function(){
+                        console.log('点击好的');
+                    }
+                });
+            });
+        </script>
+
+    </body>
+</html>
