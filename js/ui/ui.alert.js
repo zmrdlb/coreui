@@ -4,7 +4,7 @@
  * @author Zhang Mingrui | 592044573@qq.com
  * @return
  * */
-define(['$','liblayers/alertSingle','text!COREUI/ui.alert.html'],function($,AlertSingle,Tpl){
+define(['$','liblayers/alertSingle','libcompatible/csssuport','text!COREUI/ui.alert.html'],function($,AlertSingle,Csssuport,Tpl){
 
     AlertSingle.setconfig({
         layer: {
@@ -12,9 +12,13 @@ define(['$','liblayers/alertSingle','text!COREUI/ui.alert.html'],function($,Aler
             custom: {
                 hide: function(layer){
                     layer.removeClass('show-up').addClass('hide-up');
-                    setTimeout(function(){
+                    if(Csssuport.transition){
+                        setTimeout(function(){
+                            layer.hide().css('top','0px');
+                        },300);
+                    }else{
                         layer.hide().css('top','0px');
-                    },300);
+                    }
                 }
             }
         },
