@@ -13,10 +13,14 @@
     color: #333;
     line-height: 1;
     text-align: center;
-    width: 30%;
     min-width: 256px;
     max-width: 400px;
     border-radius: 5px;
+    transition-property:transform,opacity;
+	transition-duration:.3s;
+	/* Safari */
+	-webkit-transition-property:transform,opacity;
+	-webkit-transition-duration:.3s;
     .body {
         .break-line();
         font-size: 16px;
@@ -32,4 +36,17 @@
         padding-top: 14px;
         padding-bottom: 12px;
     }
+
+    /******加入一些css3动态效果*****/
+    //向上面隐藏
+    &.hide-up {
+        .transform(translateY(-100%));
+        opacity: 0;
+    }
+    //从上面显示
+    &.show-up {
+        .transform(translateY(0px));
+        opacity: 1;
+    }
+
 }

@@ -8,7 +8,15 @@ define(['$','liblayers/alertSingle','text!COREUI/ui.alert.html'],function($,Aler
 
     AlertSingle.setconfig({
         layer: {
-            classname: 'coreui-g-layer-alert'
+            classname: 'coreui-g-layer-alert',
+            custom: {
+                hide: function(layer){
+                    layer.removeClass('show-up').addClass('hide-up');
+                    setTimeout(function(){
+                        layer.hide().css('top','0px');
+                    },300);
+                }
+            }
         },
         mask: {
             bgcolor: '#000'
@@ -17,5 +25,13 @@ define(['$','liblayers/alertSingle','text!COREUI/ui.alert.html'],function($,Aler
             frametpl: Tpl
         }
     });
+
+    var layerobj = AlertSingle.getlayerobj();
+    layerobj.layer.css('top','0px').addClass('hide-up');
+
+    layerobj.pos.poscal.add(function(){
+        layerobj.layer.removeClass('hide-up').addClass('show-up');
+    });
+
     return AlertSingle;
 });

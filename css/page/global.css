@@ -250,10 +250,15 @@ body {
   color: #333;
   line-height: 1;
   text-align: center;
-  width: 30%;
   min-width: 256px;
   max-width: 400px;
   border-radius: 5px;
+  transition-property: transform,opacity;
+  transition-duration: .3s;
+  /* Safari */
+  -webkit-transition-property: transform,opacity;
+  -webkit-transition-duration: .3s;
+  /******加入一些css3动态效果*****/
 }
 .coreui-g-layer-alert .body {
   white-space: normal;
@@ -271,4 +276,20 @@ body {
   color: #007eff;
   padding-top: 14px;
   padding-bottom: 12px;
+}
+.coreui-g-layer-alert.hide-up {
+  transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  /* IE 9 */
+  -webkit-transform: translateY(-100%);
+  /* Safari and Chrome */
+  opacity: 0;
+}
+.coreui-g-layer-alert.show-up {
+  transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  /* IE 9 */
+  -webkit-transform: translateY(0px);
+  /* Safari and Chrome */
+  opacity: 1;
 }
