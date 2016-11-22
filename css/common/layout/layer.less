@@ -8,19 +8,36 @@
  */
 @import "../core";
 
-.coreui-g-layer-alert {
+.coreui-g-layer {
     background: #fff;
-    color: #333;
-    line-height: 1;
-    text-align: center;
-    min-width: 256px;
-    max-width: 400px;
     border-radius: 5px;
+    min-width: 256px;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+
     transition-property:transform,opacity;
 	transition-duration:.3s;
 	/* Safari */
 	-webkit-transition-property:transform,opacity;
 	-webkit-transition-duration:.3s;
+    /******加入一些css3动态效果*****/
+    //向上面隐藏
+    &.hide-up {
+        .transform(translateY(-100%));
+        opacity: 0;
+    }
+    //从上面显示
+    &.show-up {
+        .transform(translateY(0px));
+        opacity: 1;
+    }
+}
+.coreui-g-layer-alert {
+    color: #333;
+    text-align: center;
+    min-width: 256px;
+    max-width: 400px;
     .body {
         .break-line();
         font-size: 16px;
@@ -35,18 +52,6 @@
         color: #007eff;
         padding-top: 14px;
         padding-bottom: 12px;
-    }
-
-    /******加入一些css3动态效果*****/
-    //向上面隐藏
-    &.hide-up {
-        .transform(translateY(-100%));
-        opacity: 0;
-    }
-    //从上面显示
-    &.show-up {
-        .transform(translateY(0px));
-        opacity: 1;
     }
 
 }

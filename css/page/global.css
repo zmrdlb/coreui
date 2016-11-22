@@ -245,20 +245,41 @@ body {
  *  @author zhangmingrui | 592044573@qq.com
  *  @date created 2016-11-02
  */
-.coreui-g-layer-alert {
+.coreui-g-layer {
   background: #fff;
-  color: #333;
-  line-height: 1;
-  text-align: center;
-  min-width: 256px;
-  max-width: 400px;
   border-radius: 5px;
+  min-width: 256px;
+  position: fixed;
+  left: 0px;
+  top: 0px;
   transition-property: transform,opacity;
   transition-duration: .3s;
   /* Safari */
   -webkit-transition-property: transform,opacity;
   -webkit-transition-duration: .3s;
   /******加入一些css3动态效果*****/
+}
+.coreui-g-layer.hide-up {
+  transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  /* IE 9 */
+  -webkit-transform: translateY(-100%);
+  /* Safari and Chrome */
+  opacity: 0;
+}
+.coreui-g-layer.show-up {
+  transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  /* IE 9 */
+  -webkit-transform: translateY(0px);
+  /* Safari and Chrome */
+  opacity: 1;
+}
+.coreui-g-layer-alert {
+  color: #333;
+  text-align: center;
+  min-width: 256px;
+  max-width: 400px;
 }
 .coreui-g-layer-alert .body {
   white-space: normal;
@@ -276,20 +297,4 @@ body {
   color: #007eff;
   padding-top: 14px;
   padding-bottom: 12px;
-}
-.coreui-g-layer-alert.hide-up {
-  transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  /* IE 9 */
-  -webkit-transform: translateY(-100%);
-  /* Safari and Chrome */
-  opacity: 0;
-}
-.coreui-g-layer-alert.show-up {
-  transform: translateY(0px);
-  -ms-transform: translateY(0px);
-  /* IE 9 */
-  -webkit-transform: translateY(0px);
-  /* Safari and Chrome */
-  opacity: 1;
 }

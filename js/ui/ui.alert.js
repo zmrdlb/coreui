@@ -8,7 +8,7 @@ define(['$','liblayers/alertSingle','libcompatible/csssuport','text!COREUI/ui.al
 
     AlertSingle.setconfig({
         layer: {
-            classname: 'coreui-g-layer-alert',
+            classname: 'coreui-g-layer coreui-g-layer-alert',
             custom: {
                 hide: function(layer){
                     layer.removeClass('show-up').addClass('hide-up');
