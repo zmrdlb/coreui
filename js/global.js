@@ -12,7 +12,8 @@ requirejs.config({
     baseUrl: '../js',
     paths: {
         'text': 'widget/lib/require.text',
-        'jquery': 'widget/lib/jquery-1.11.3.min',
+        'jquery': 'widget/lib/jquery-2.2.4.min',
+        'migrate': 'widget/lib/jquery-migrate-1.4.1',
         'libio': 'widget/io',
         'libjson': 'widget/util/json',
         'libchannel': 'widget/util/channel',
@@ -32,7 +33,10 @@ requirejs.config({
         //当前业务公共组件库路径
 
         'COREUI': 'ui'
-    }
+    },
+    shim: {
+		'migrate': ['jquery']
+	}
     // map: {
     //     '*': {
     //         'text': 'widget/lib/require.text'
@@ -40,6 +44,6 @@ requirejs.config({
     // }
 });
 
-define('$',['jquery'],function($){
+define('$',['jquery','migrate'],function($){
     return $;
 });
