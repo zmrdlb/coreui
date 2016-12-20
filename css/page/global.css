@@ -252,10 +252,10 @@ body {
   position: fixed;
   left: 0px;
   top: 0px;
-  transition-property: transform,opacity;
+  transition-property: top,transform;
   transition-duration: .3s;
   /* Safari */
-  -webkit-transition-property: transform,opacity;
+  -webkit-transition-property: top,transform;
   -webkit-transition-duration: .3s;
   /******加入一些css3动态效果*****/
 }
@@ -265,7 +265,7 @@ body {
   /* IE 9 */
   -webkit-transform: translateY(-100%);
   /* Safari and Chrome */
-  opacity: 0;
+  top: 0px !important;
 }
 .coreui-g-layer.show-up {
   transform: translateY(0px);
@@ -273,7 +273,6 @@ body {
   /* IE 9 */
   -webkit-transform: translateY(0px);
   /* Safari and Chrome */
-  opacity: 1;
 }
 .coreui-g-layer-alert {
   color: #333;
