@@ -14,16 +14,26 @@ define(['$','liblayers/alertSingle','libcompatible/csssuport','text!COREUI/ui.al
                     layer.removeClass('show-up').addClass('hide-up');
                     if(Csssuport.transition){
                         setTimeout(function(){
-                            layer.hide().css('top','0px');
+                            layer.hide();
                         },300);
                     }else{
-                        layer.hide().css('top','0px');
+                        layer.hide();
                     }
                 }
             }
         },
         mask: {
-            bgcolor: '#000'
+            custom: {
+                hide: function(mask){
+                    if(Csssuport.transition){
+                        setTimeout(function(){
+                            mask.hide();
+                        },300);
+                    }else{
+                        mask.hide();
+                    }
+                }
+            }
         },
         alert: {
             frametpl: Tpl
@@ -31,7 +41,7 @@ define(['$','liblayers/alertSingle','libcompatible/csssuport','text!COREUI/ui.al
     });
 
     var layerobj = AlertSingle.getlayerobj();
-    layerobj.layer.css('top','0px').addClass('hide-up');
+    layerobj.layer.addClass('hide-up');
 
     layerobj.pos.poscal.add(function(){
         layerobj.layer.removeClass('hide-up').addClass('show-up');

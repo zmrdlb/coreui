@@ -32,16 +32,26 @@ function($,BombLayer,ExtendClass,Csssuport){
                         layer.removeClass('show-up').addClass('hide-up');
                         if(Csssuport.transition){
                             setTimeout(function(){
-                                layer.hide().css('top','0px');
+                                layer.hide();
                             },300);
                         }else{
-                            layer.hide().css('top','0px');
+                            layer.hide();
                         }
                     }
                 }
             },
             mask: {
-                bgcolor: '#000'
+                custom: {
+                    hide: function(mask){
+                        if(Csssuport.transition){
+                            setTimeout(function(){
+                                mask.hide();
+                            },300);
+                        }else{
+                            mask.hide();
+                        }
+                    }
+                }
             }
         });
 
@@ -49,7 +59,7 @@ function($,BombLayer,ExtendClass,Csssuport){
 
         var _layer = this.layer;
 
-        _layer.css('top','0px').addClass('hide-up');
+        _layer.addClass('hide-up');
 
         this.pos.poscal.add(function(){
             _layer.removeClass('hide-up').addClass('show-up');
