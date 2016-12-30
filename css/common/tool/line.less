@@ -4,7 +4,10 @@
  *  @author zhangmingrui | 592044573@qq.com
  *  @date created 2015-12-02
  */
-
+/*不折行*/
+.nobreak-line(){
+  white-space: nowrap;
+}
 /*折行*/
 .break-line() {
   white-space: normal;
@@ -25,17 +28,12 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-/*单行显示不折行*/
-.no-break-line() {
-  overflow: hidden;
-  white-space: nowrap;
-}
 /**
  *   @section 针对某些情况下，行高不生效。
  *   原理：决定行高的是行内最高的元素的值。
  */
 .line-height(){
-    &:after {
+    &:before {
         content: '';
         display: inline-block;
         height: 100%;

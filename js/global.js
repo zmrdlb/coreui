@@ -32,16 +32,12 @@ requirejs.config({
 
         //当前业务公共组件库路径
 
-        'COREUI': 'ui'
+        'COREUI': 'ui',
+        'CORECOMMON': 'common'
     },
     shim: {
 		'migrate': ['jquery']
 	}
-    // map: {
-    //     '*': {
-    //         'text': 'widget/lib/require.text'
-    //     }
-    // }
 });
 
 define('$',['jquery','migrate'],function($){
