@@ -12,8 +12,8 @@ requirejs.config({
     baseUrl: '../js',
     paths: {
         'text': 'widget/lib/require.text',
-        'jquery': 'widget/lib/jquery-2.2.4.min',
-        'migrate': 'widget/lib/jquery-migrate-1.4.1',
+        'jquery': 'widget/lib/jquery-3.1.1',
+        'migrate': 'widget/lib/jquery-migrate-3.0.0',
         'libio': 'widget/io',
         'libjson': 'widget/util/json',
         'libchannel': 'widget/util/channel',
