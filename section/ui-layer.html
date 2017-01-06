@@ -41,6 +41,10 @@
                 //实例化
                 var _mylayer = new MyLayer();
 
+                _mylayer.hideaftercal.add(function(){
+                    console.log('隐藏');
+                });
+
                 $('#btn-alert').on('click',function(){
                     _mylayer.show();
                 });

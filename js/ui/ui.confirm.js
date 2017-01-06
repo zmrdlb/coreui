@@ -1,26 +1,26 @@
 /**
- * @fileoverview 公共alert弹层
- * @version 1.0 | 2016-11-14 版本信息
+ * @fileoverview 公共confirm弹层
+ * @version 1.0 | 2017-01-06 版本信息
  * @author Zhang Mingrui | 592044573@qq.com
  * @return
  * */
-define(['$','liblayers/alertSingle','libcompatible/csssuport','text!COREUI/ui.alert.html'],function($,AlertSingle,Csssuport,Tpl){
-    AlertSingle.hidedestroy = false;
+define(['$','liblayers/confirmSingle','libcompatible/csssuport','text!COREUI/ui.confirm.html'],function($,ConfirmSingle,Csssuport,Tpl){
+    ConfirmSingle.hidedestroy = false;
 
-    AlertSingle.setconfig({
+    ConfirmSingle.setconfig({
         layer: {
-            classname: 'coreui-g-layer coreui-g-warnlayer coreui-g-layer-alert',
+            classname: 'coreui-g-layer coreui-g-warnlayer coreui-g-layer-confirm',
             custom: {
                 hide: function(layer){
                     layer.removeClass('show-up').addClass('hide-up');
                     if(Csssuport.transition){
                         setTimeout(function(){
                             layer.hide();
-                            AlertSingle.destroy();
+                            ConfirmSingle.destroy();
                         },300);
                     }else{
                         layer.hide();
-                        AlertSingle.destroy();
+                        ConfirmSingle.destroy();
                     }
                 }
             }
@@ -38,12 +38,12 @@ define(['$','liblayers/alertSingle','libcompatible/csssuport','text!COREUI/ui.al
                 }
             }
         },
-        alert: {
+        confirm: {
             frametpl: Tpl
         }
     });
 
-    AlertSingle.createcal.add(function(layerobj){
+    ConfirmSingle.createcal.add(function(layerobj){
         layerobj.layer.addClass('hide-up');
 
         layerobj.pos.poscal.add(function(){
@@ -51,5 +51,5 @@ define(['$','liblayers/alertSingle','libcompatible/csssuport','text!COREUI/ui.al
         });
     });
 
-    return AlertSingle;
+    return ConfirmSingle;
 });

@@ -8,6 +8,9 @@
  */
 @import "../core";
 
+/**
+ * 基本层
+ */
 .coreui-g-layer {
     background: #fff;
     border-radius: 5px;
@@ -32,25 +35,78 @@
         .transform(translateY(0px));
     }
 }
-.coreui-g-layer-alert {
-    color: #333;
-    text-align: center;
-    min-width: 256px;
-    max-width: 400px;
-    .body {
-        .break-line();
-        font-size: 16px;
-        line-height: 29px;
-        padding: 35px 30px 25px 30px;
-    }
-    .footer {
-        border-top: 1px solid #d8d8d8;
-        margin: 0px 8px;
-        line-height: 26px;
-        font-size: 18px;
-        color: #007eff;
-        padding-top: 14px;
-        padding-bottom: 12px;
-    }
 
+/**
+ * 警告弹层基本样式
+ */
+ .coreui-g-warnlayer {
+     text-align: center;
+     max-width: 560px;
+     padding-top: 20px;
+     .title {
+         line-height: 34px;
+         font-size: 20px;
+         color: #000;
+     }
+     .body {
+         .break-line();
+         font-size: 16px;
+         line-height: 32px;
+         color: #999;
+         padding: 0px 20px 8px;
+         border-bottom: 1px solid @color-border;
+     }
+     .footer a{
+         font-size: 18px;
+         line-height: 50px;
+         color: @color-a;
+     }
+ }
+/**
+ * alert层
+ */
+.coreui-g-layer-alert {
+    .footer a {
+        padding: 10px;
+    }
+}
+
+/**
+ * confirm层
+ */
+.coreui-g-layer-confirm {
+    .footer{
+        position: relative;
+        .clearfix();
+        a {
+            display: block;
+            width: 50%;
+            float: left;
+            &.cancel {
+                color: #999;
+            }
+        }
+        .split {
+            content: '';
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            width: 1px;
+            background-color: @color-border;
+            left: 50%;
+        }
+    }
+}
+
+/**
+ * toast
+ */
+.coreui-g-layer-toast {
+    min-width: 0px;
+    font-size: 16px;
+    line-height: 30px;
+    border-radius: 15px;
+    color: #fff;
+    padding: 0px 10px;
+    background-color: rgba(0,0,0,0.7);
 }

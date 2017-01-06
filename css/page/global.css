@@ -175,6 +175,9 @@ a:active {
  *   @section 图片路径
  */
 /**
+ * @section 颜色配置
+ */
+/**
  *  实用工具库，包括：tool文件夹中的所有实用less方法
  *  @version 1.0
  *  @author zhangmingrui | 592044573@qq.com
@@ -340,6 +343,9 @@ body {
  *  @author zhangmingrui | 592044573@qq.com
  *  @date created 2016-11-02
  */
+/**
+ * 基本层
+ */
 .coreui-g-layer {
   background: #fff;
   border-radius: 5px;
@@ -369,26 +375,80 @@ body {
   -webkit-transform: translateY(0px);
   /* Safari and Chrome */
 }
-.coreui-g-layer-alert {
-  color: #333;
+/**
+ * 警告弹层基本样式
+ */
+.coreui-g-warnlayer {
   text-align: center;
-  min-width: 256px;
-  max-width: 400px;
+  max-width: 560px;
+  padding-top: 20px;
 }
-.coreui-g-layer-alert .body {
+.coreui-g-warnlayer .title {
+  line-height: 34px;
+  font-size: 20px;
+  color: #000;
+}
+.coreui-g-warnlayer .body {
   white-space: normal;
   word-wrap: break-word;
   word-break: break-all;
   font-size: 16px;
-  line-height: 29px;
-  padding: 35px 30px 25px 30px;
+  line-height: 32px;
+  color: #999;
+  padding: 0px 20px 8px;
+  border-bottom: 1px solid #d2d3d5;
 }
-.coreui-g-layer-alert .footer {
-  border-top: 1px solid #d8d8d8;
-  margin: 0px 8px;
-  line-height: 26px;
+.coreui-g-warnlayer .footer a {
   font-size: 18px;
-  color: #007eff;
-  padding-top: 14px;
-  padding-bottom: 12px;
+  line-height: 50px;
+  color: #357ef6;
+}
+/**
+ * alert层
+ */
+.coreui-g-layer-alert .footer a {
+  padding: 10px;
+}
+/**
+ * confirm层
+ */
+.coreui-g-layer-confirm .footer {
+  position: relative;
+}
+.coreui-g-layer-confirm .footer:before,
+.coreui-g-layer-confirm .footer:after {
+  content: " ";
+  display: table;
+}
+.coreui-g-layer-confirm .footer:after {
+  clear: both;
+}
+.coreui-g-layer-confirm .footer a {
+  display: block;
+  width: 50%;
+  float: left;
+}
+.coreui-g-layer-confirm .footer a.cancel {
+  color: #999;
+}
+.coreui-g-layer-confirm .footer .split {
+  content: '';
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 1px;
+  background-color: #d2d3d5;
+  left: 50%;
+}
+/**
+ * toast
+ */
+.coreui-g-layer-toast {
+  min-width: 0px;
+  font-size: 16px;
+  line-height: 30px;
+  border-radius: 15px;
+  color: #fff;
+  padding: 0px 10px;
+  background-color: rgba(0, 0, 0, 0.7);
 }

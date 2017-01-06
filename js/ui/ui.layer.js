@@ -21,9 +21,9 @@ function($,BombLayer,ExtendClass,Csssuport){
      *      }
 	 */
     function UILayer(config){
+        var _this = this;
         //添加自定义参数
-        config = config || {};
-        $.extend(true,config,{
+        config = $.extend(true,{
             layer: {
                 classname: 'coreui-g-layer',
                 show: false,
@@ -33,9 +33,11 @@ function($,BombLayer,ExtendClass,Csssuport){
                         if(Csssuport.transition){
                             setTimeout(function(){
                                 layer.hide();
+                                _this.hideaftercal.fire(); //层隐藏后回调
                             },300);
                         }else{
                             layer.hide();
+                            _this.hideaftercal.fire(); //层隐藏后回调
                         }
                     }
                 }
@@ -53,7 +55,7 @@ function($,BombLayer,ExtendClass,Csssuport){
                     }
                 }
             }
-        });
+        },config || {});
 
         UILayer.superclass.constructor.call(this,config);
 
@@ -67,6 +69,14 @@ function($,BombLayer,ExtendClass,Csssuport){
     }
 
     ExtendClass(UILayer,BombLayer);
+
+    UILayer.prototype.hide = function(){
+        if(this.isshow()){
+			this.hidebeforecal.fire(); //层隐藏前回调
+			this.mask && this.mask.hide();
+			this._hide();
+		}
+    }
 
     return UILayer;
 });

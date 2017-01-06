@@ -6,7 +6,7 @@
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <meta name="renderer" content="webkit">
-        <title>alert测试页</title>
+        <title>toast测试页</title>
         <link rel="stylesheet" href="../css/page/global.css" />
         <style>
             button {
@@ -33,21 +33,13 @@
                 BaseView.register({
                     _init: function(){
                         $('#btn-all').on('click',function(){
-                            _APP.Alert.show({
-                                title: '系统提示',
-                                content: '您还未登陆',
-                                ok: '好的'
-                            },{
-                                ok: function(){
-                                    console.log('点击好的');
-                                }
+                            _APP.Toast.show('请先登录',function(){
+                                console.log('隐藏');
                             });
                         });
 
                         $('#btn-single').on('click',function(){
-                            _APP.Alert.show({
-                                content: '您还未登陆'
-                            });
+                            _APP.Toast.show('请先登录');
                         });
                     }
                 });

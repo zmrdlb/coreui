@@ -4,13 +4,15 @@
  * @author Zhang Mingrui | 592044573@qq.com
  * @return
  * */
-define(['COREUI/ui.alert'],function(Alert){
+define(['COREUI/ui.alert','COREUI/ui.confirm','COREUI/ui.toast'],function(Alert,Confirm,Toast){
 
     function BaseView(){
         this.name = 'zmrdlb';
         //绑定一些常用的组件到全局变量
         window._APP = {};
         _APP.Alert = Alert;
+        _APP.Confirm = Confirm;
+        _APP.Toast = Toast;
     }
 
     BaseView.prototype.init = function(){

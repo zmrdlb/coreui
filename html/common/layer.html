@@ -22,12 +22,26 @@
               <a href="javascript:;">关闭</a>
         </div>
 
-        <div class="coreui-g-layer coreui-g-layer-alert" style="top: 100px;">
-              <div class="body">对不起，您所上传的视频格式，系统暂时不支持</div>
+        <div class="coreui-g-layer coreui-g-warnlayer coreui-g-layer-alert" style="top: 100px;">
+			  <div class="title">提示</div>
+              <div class="body">已达到绑定上限，无法绑定更多</div>
               <div class="footer">
-                  <a href="javascript:;">下载</a>
+                  <a href="javascript:;">确定</a>
               </div>
         </div>
 
+		<div class="coreui-g-layer coreui-g-warnlayer coreui-g-layer-confirm" style="top: 280px;">
+			  <div class="title">提示</div>
+              <div class="body">是否删除此项？</div>
+              <div class="footer">
+				  <a href="javascript:;" class="cancel">取消</a>
+				  <a href="javascript:;">确定</a>
+				  <i class="split"></i>
+              </div>
+        </div>
+
+		<div class="coreui-g-layer coreui-g-layer-toast" style="top: 500px;">
+			请先登录!
+		</div>
 	</body>
 </html>

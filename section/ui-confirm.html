@@ -6,7 +6,7 @@
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <meta name="renderer" content="webkit">
-        <title>alert测试页</title>
+        <title>confirm测试页</title>
         <link rel="stylesheet" href="../css/page/global.css" />
         <style>
             button {
@@ -16,9 +16,8 @@
     </head>
 
     <body>
-
         <p>
-            点击按钮弹出alert
+            点击按钮弹出confirm
         </p>
 
         <button id="btn-all">传入所有自定义参数</button>
@@ -33,20 +32,28 @@
                 BaseView.register({
                     _init: function(){
                         $('#btn-all').on('click',function(){
-                            _APP.Alert.show({
+                            _APP.Confirm.show({
                                 title: '系统提示',
-                                content: '您还未登陆',
-                                ok: '好的'
+                                content: '确定删除此用户？',
+                                ok: '是的',
+                                cancel: '考虑一下'
                             },{
                                 ok: function(){
-                                    console.log('点击好的');
+                                    console.log('点击是的');
+                                },
+                                cancel: function(){
+                                    console.log('点击考虑一下');
                                 }
                             });
                         });
 
                         $('#btn-single').on('click',function(){
-                            _APP.Alert.show({
-                                content: '您还未登陆'
+                            _APP.Confirm.show({
+                                content: '确定删除此用户？'
+                            },{
+                                ok: function(){
+                                    console.log('点击确定');
+                                }
                             });
                         });
                     }
