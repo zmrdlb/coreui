@@ -12,6 +12,8 @@ requirejs.config({
     baseUrl: '../js',
     paths: {
         'text': 'widget/lib/require.text',
+        'css': 'widget/lib/require-css/css',
+
         'jquery': 'widget/lib/jquery-3.1.1',
         'migrate': 'widget/lib/jquery-migrate-3.0.0',
         'libio': 'widget/io',
