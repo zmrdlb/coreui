@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 			coreui: {
 				expand: true,
 				cwd: '../coreui/',
-				src: ['js/widget/lib/*'],
+				src: ['js/widget/lib/**'],
 				dest: '../dist/coreui/'
 			}
 		},
