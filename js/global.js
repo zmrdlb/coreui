@@ -14,7 +14,7 @@ requirejs.config({
         'text': 'widget/lib/require.text',
         'css': 'widget/lib/require-css/css',
 
-        'jquery': 'widget/lib/jquery-3.1.1',
+        'jquery': 'widget/lib/jquery-3.1.1.min',
         'migrate': 'widget/lib/jquery-migrate-3.0.0',
         'libio': 'widget/io',
         'libjson': 'widget/util/json',
