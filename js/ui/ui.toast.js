@@ -38,7 +38,7 @@
              toast.show();
              setTimeout(function(){
                  toast.hide();
-             },1000);
+             },2000);
          }
      }
  });

@@ -4,7 +4,8 @@
  * @author Zhang Mingrui | 592044573@qq.com
  * @return
  * */
-define(['COREUI/ui.alert','COREUI/ui.confirm','COREUI/ui.toast'],function(Alert,Confirm,Toast){
+define(['COREUI/ui.alert','COREUI/ui.confirm','COREUI/ui.toast','COREUI/ui.loading'],
+function(Alert,Confirm,Toast,Loading){
 
     function BaseView(){
         this.name = 'zmrdlb';
@@ -13,6 +14,7 @@ define(['COREUI/ui.alert','COREUI/ui.confirm','COREUI/ui.toast'],function(Alert,
         _APP.Alert = Alert;
         _APP.Confirm = Confirm;
         _APP.Toast = Toast;
+        _APP.Loading = Loading;
     }
 
     BaseView.prototype.init = function(){

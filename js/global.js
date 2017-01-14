@@ -31,6 +31,7 @@ requirejs.config({
         'libtpl': 'widget/util/tpl',
         'libpage': 'widget/ui/page',
         'libtab': 'widget/ui/tab',
+        'libform': 'widget/ui/form',
 
         //当前业务公共组件库路径
 

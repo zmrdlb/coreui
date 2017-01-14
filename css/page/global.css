@@ -196,7 +196,7 @@ a:active {
  *          .g-arrow();
  *      }
  *      <i class="myclass up"></i> 向上箭头
- *      <i class="myclass down"></i> 向下箭头
+ *      <i class="myclass"></i> 向下箭头
  *      <i class="myclass right"></i> 向右箭头
  *      <i class="myclass left"></i> 向左箭头
  */
@@ -451,4 +451,68 @@ body {
   color: #fff;
   padding: 0px 10px;
   background-color: rgba(0, 0, 0, 0.7);
+}
+/**
+ * css3 loading
+ */
+.coreui-g-layer-loading {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.4);
+  min-width: 0px;
+  /*Typing Loader*/
+}
+.coreui-g-layer-loading .typing_loader {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  -webkit-animation: coreui-g-typing 1s linear infinite alternate;
+  -moz-animation: coreui-g-typing 1s linear infinite alternate;
+  animation: coreui-g-typing 1s linear infinite alternate;
+  margin: 46px auto;
+  /* Not necessary- its only for layouting*/
+  position: relative;
+  left: -12px;
+}
+@-webkit-keyframes coreui-g-typing {
+  0% {
+    background-color: #ffffff;
+    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
+  }
+  25% {
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 12px 0px 0px 0px #ffffff, 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
+  }
+  75% {
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px #ffffff;
+  }
+}
+@-moz-keyframes coreui-g-typing {
+  0% {
+    background-color: #ffffff;
+    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
+  }
+  25% {
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 12px 0px 0px 0px #ffffff, 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
+  }
+  75% {
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px #ffffff;
+  }
+}
+@keyframes coreui-g-typing {
+  0% {
+    background-color: #ffffff;
+    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
+  }
+  25% {
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 12px 0px 0px 0px #ffffff, 24px 0px 0px 0px rgba(255, 255, 255, 0.2);
+  }
+  75% {
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 12px 0px 0px 0px rgba(255, 255, 255, 0.2), 24px 0px 0px 0px #ffffff;
+  }
 }

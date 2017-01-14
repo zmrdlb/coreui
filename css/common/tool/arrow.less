@@ -11,25 +11,23 @@
  *          .g-arrow();
  *      }
  *      <i class="myclass up"></i> 向上箭头
- *      <i class="myclass down"></i> 向下箭头
+ *      <i class="myclass"></i> 向下箭头
  *      <i class="myclass right"></i> 向右箭头
  *      <i class="myclass left"></i> 向左箭头
  */
 @import 'transform';
 
-.arrow(@width: 14rem, @height: 14rem, @color: #7b7b7b, @border-width:2px) {
+.arrow(@width: 14px, @height: 14px, @color: #7b7b7b, @border-width:2px) {
     display: inline-block;
-    width: (@width / 40rem);
-    height: (@height / 40rem);
+    width: @width;
+    height: @height;
     border: @border-width solid @color;
     border-bottom: none;
     border-left: none;
     vertical-align: middle;
+    .transform(rotate(135deg));
     &.up {
         .transform(rotate(-45deg));
-    }
-    &.down {
-        .transform(rotate(135deg));
     }
     &.right {
         .transform(rotate(45deg));
