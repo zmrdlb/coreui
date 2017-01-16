@@ -4,8 +4,8 @@
  * @author Zhang Mingrui | 592044573@qq.com
  * @return
  * */
-define(['COREUI/ui.alert','COREUI/ui.confirm','COREUI/ui.toast','COREUI/ui.loading'],
-function(Alert,Confirm,Toast,Loading){
+define(['COREUI/ui.alert','COREUI/ui.confirm','COREUI/ui.toast','COREUI/ui.loading','libstr/getUrlArgs'],
+function(Alert,Confirm,Toast,Loading,GetUrlArgs){
 
     function BaseView(){
         this.name = 'zmrdlb';
@@ -15,6 +15,7 @@ function(Alert,Confirm,Toast,Loading){
         _APP.Confirm = Confirm;
         _APP.Toast = Toast;
         _APP.Loading = Loading;
+        _APP.GetUrlArgs = GetUrlArgs;
     }
 
     BaseView.prototype.init = function(){
