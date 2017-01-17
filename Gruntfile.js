@@ -22,15 +22,24 @@ module.exports = function(grunt) {
 				src: ['css/page/*.css'],
 				dest: '../dist/coreui/'
 			}
+		},
+        //清空文件夹
+        clean: {
+		    options: {
+		        force: true
+		    },
+            dist: ["../dist/coreui/*","!../dist/coreui/.git"]
 		}
 	});
 
     grunt.loadTasks(npmdir+'grunt-contrib-copy/tasks');
     grunt.loadTasks(npmdir+'grunt-contrib-cssmin/tasks');
+    grunt.loadTasks(npmdir+'grunt-contrib-clean/tasks');
 
     /*******提测或上线执行*********/
     // 打包压缩
+    // grunt -v --base=D:\mycoderoot\project-frame\tool\node_modules
 	grunt.registerTask('default', 'default', function(){
-        grunt.task.run(['copy','cssmin']);
+        grunt.task.run(['clean','copy','cssmin']);
 	});
 };
