@@ -25,22 +25,51 @@ css/page/global.css里全局样式的静态页面demo，放在html/common里面�
 
 ## 2. js
 
-- ui : 全局ui组件，比如一版alert提示框
-
-- common: 全局基础组件
-
-  > base.view.js: 页面基本view类。最终业务项目中落地页的js都必须引用此js或其子类。
+### ui : 全局ui组件
+ 
+  - 基本弹层layer
   
-      设计思想：
+  - alert提示框
+  
+  - confirm提示框
+  
+  - toast提示层
+  
+  - 全铺loading
+  
+  
+### common: 全局基础组件
+
+  - base.view.js: 页面基本view类。最终业务项目中落地页的js都必须引用此js或其子类。
+  
+      > 设计思想：
       
       1. 项目中存在几乎任何页面都会用到的一些公共组件，但是这些组件比较杂而多，单个引用又麻烦，所以在此做一个总的入口，解决代码碎片化和多余代码加载问题；
       
       2. 对于页面规定一个总入口，处理一些公共业务问题：如，每个页面都要验证用户登录与获取用户信息；
       
+      
+  - widget: js代码库：git add submodule https://github.com/zmrdlb/widgetpc.git
+ 
+      
 ## 3. section
 
 核心库组件使用demo
 
+  - ui-layer.html: 基本弹层使用-继承使用方式
+  
+  - ui-alert.html: alert提示框
+  
+  - ui-confirm.html: confirm提示框
+  
+  - ui-toast.html: toast提示层
+  
+  - ui-loading.html: 全铺loading
+   
+  - formverify.html: form表单验证
+  
+  - io.html: io业务组件封装及使用
+  
 ## ps:
 
 不用担心css命名冲突问题，因为css命名空间为：.coreui-g-*
