@@ -4,12 +4,12 @@
  * @author Zhang Mingrui | 592044573@qq.com
  * @return
  * */
- define(['$','COREUI/ui.layer'],function($,Layer){
+ define(['$','COREUI/ui.layer','libclassdesign/workerControl'],function($,Layer,WorkerControl){
 
-     var loading = null;
+     var workerControl = new WorkerControl();
 
-     function createLoading(){
-         loading = new Layer({
+     function createLoading(worker){
+         worker.loading = new Layer({
              layer: {
                  classname: 'coreui-g-layer coreui-g-layer-loading'
              },
@@ -19,21 +19,27 @@
              }
          });
 
-         loading.hideaftercal.add(function(){
-             loading.destroy();
-             loading = null;
+         worker.loading.hideaftercal.add(function(){
+             worker.loading.destroy();
+             worker.loading = null;
          });
+
+         return worker.loading;
      }
 
 
      return {
          show: function(){
-             createLoading();
+             var loading = createLoading(workerControl.get());
              loading.setContent('<div class="typing_loader"></div>');
              loading.show();
          },
          hide: function(){
-             loading.hide();
+             var worker = workerControl.end();
+             if(worker){
+                 console.log('结束一个');
+                 worker.loading.hide();
+             }
          }
      }
  });
