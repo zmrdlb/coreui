@@ -4,12 +4,12 @@
  * @author Zhang Mingrui | 592044573@qq.com
  * @return
  * */
- define(['$','COREUI/ui.layer'],function($,Layer){
+ define(['$','COREUI/ui.layer','libclassdesign/workerControl'],function($,Layer,WorkerControl){
 
-     var toast = null;
+     var workerControl = new WorkerControl();
 
-     function createToast(){
-         toast = new Layer({
+     function createToast(worker){
+         worker.toast = new Layer({
              layer: {
                  classname: 'coreui-g-layer coreui-g-layer-toast'
              },
@@ -19,16 +19,18 @@
              }
          });
 
-         toast.hideaftercal.add(function(){
-             toast.destroy();
-             toast = null;
+         worker.toast.hideaftercal.add(function(){
+             worker.toast.destroy();
+             worker.toast = null;
          });
+
+         return worker.toast;
      }
 
 
      return {
          show: function(content,hideaftercal){
-             createToast();
+             var toast = createToast(workerControl.get());
              toast.setContent(content);
              toast.hideaftercal.add(function(){
                  if(typeof hideaftercal == 'function'){

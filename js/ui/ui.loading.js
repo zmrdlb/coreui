@@ -37,7 +37,6 @@
          hide: function(){
              var worker = workerControl.end();
              if(worker){
-                 console.log('结束一个');
                  worker.loading.hide();
              }
          }
