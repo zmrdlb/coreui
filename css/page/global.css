@@ -113,8 +113,7 @@ select {
   outline: none;
 }
 ul,
-ol,
-li {
+ol {
   list-style: none;
 }
 button,
