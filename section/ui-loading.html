@@ -32,12 +32,11 @@
                     _init: function(){
                         $('#btn-show').on('click',function(){
                             _APP.Loading.show();
+                            //隐藏
+                            setTimeout(function(){
+                                _APP.Loading.hide();
+                            },3000);
                         });
-
-                        //隐藏
-                        setTimeout(function(){
-                            _APP.Loading.hide();
-                        },3000);
                     }
                 });
             });
