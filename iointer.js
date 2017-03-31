@@ -6,6 +6,7 @@ const multiparty  = require('multiparty');
 var requestCount = 0;
 
 function writeHead(res){
+    res.setHeader('Charset','utf-8');
     res.setHeader('Access-Control-Allow-Origin','*');
     res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -14,7 +15,7 @@ function writeHead(res){
 function writeempty(res) {
     writeHead(res);
     res.setHeader('Content-Type','text/plain');
-    res.writeHead(200);
+    res.writeHead(404,'not found');
     res.end('');
 }
 
