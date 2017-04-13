@@ -60,7 +60,6 @@ dl,
 dt,
 dd,
 select,
-textarea,
 fieldset,
 form,
 label,
@@ -100,7 +99,8 @@ video {
   font-size: 100%;
 }
 button,
-input {
+input,
+textarea {
   margin: 0;
   padding: 0;
   vertical-align: baseline;
