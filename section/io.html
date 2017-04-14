@@ -14,19 +14,46 @@
     <body>
 
         <p>
-            请打开控制台查看接口请求结果
+            1. 支持接口队列请求
+        </p>
+        <p>
+            2. 支持接口数据缓存
+        </p>
+        <p>
+            3. 支持接口统一业务错误及其他情况处理
         </p>
 
         <script src="../js/widget/lib/requirejs2.1.22.min.js"></script>
         <script src="../js/global.js"></script>
 
         <script>
+        /**
+         * 各自业务工程里面建立一个common/storage.js。下面是简单的例子
+         * @type {[type]}
+         */
+        define('common/storage',['libio/storage'],function(Storage){
+            /**
+             * 本地存储对象所属组，命名可自行修改。默认是ZMRDLB
+             * @type {String}
+             */
+            // Storage.groupname = 'myprojectname';
 
+            return {
+                listdata: Storage.create({
+                    maxage: '1D', //保存1天
+                    key: 'listdata'
+                }),
+                listdatatwo: Storage.create({
+                    maxage: '0.1H', //保存1天
+                    key: 'listdatatwo'
+                })
+            };
+        });
         /**
          * 各自业务工程里面建立一个common/model.js。下面是简单的例子
          * @type {[type]}
          */
-        define('common/model',['libio/ioconfig','libio/interio'],function($ioconfig,$interio){
+        define('common/model',['libio/ioconfig','libio/interio','common/storage'],function($ioconfig,$interio,Storage){
             /**
              * 统一处理未登录
              */
@@ -108,7 +135,19 @@
                 listdata: function(ioargs,iocall){
                     $interio.transRequest($.extend({
                         url: basehost+'/listdata',
-                        method:'POST'
+                        method:'POST',
+                        /**
+                         * 如果想对接口的数据进行缓存，则进行以下配置
+                         *
+                         * 数据缓存，暂不区分接口请求参数
+                         * @type {Object}
+                         */
+                        customconfig: {
+                            storage: Storage.listdata //配置缓存对象，必填
+                            //如果请求该接口前，要清楚所有本地缓存，则添加此配置
+                            //如：当前接口是用户登录/退出接口，则清除所有敏感数据
+                            // clearall: true
+                        }
                     },ioargs),iocall);
                 },
 
@@ -148,6 +187,7 @@
                             //     console.log('完成');
                             // }
                         });
+
                         Model.main({
                             data: {'name': 'zmrdlb'}
                             // customconfig: {
