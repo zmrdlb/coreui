@@ -26,14 +26,24 @@ define(['$','liblayers/confirmSingle','libcompatible/csssuport','text!COREUI/ui.
             }
         },
         mask: {
+            classname: 'coreui-g-mask',
+            opacity: Csssuport.transition? 0: 0.6,
             custom: {
                 hide: function(mask){
                     if(Csssuport.transition){
+                        mask.css('opacity',0);
                         setTimeout(function(){
                             mask.hide();
                         },300);
                     }else{
                         mask.hide();
+                    }
+                },
+                show: function(mask){
+                    if(Csssuport.transition){
+                        mask.show().css('opacity',0.6);
+                    }else{
+                        mask.show();
                     }
                 }
             }
