@@ -49,7 +49,9 @@ css/page/global.css里全局样式的静态页面demo，放在html/common里面�
       2. 对于页面规定一个总入口，处理一些公共业务问题：如，每个页面都要验证用户登录与获取用户信息；
       
       
-  - widget: js代码库：git add submodule https://github.com/zmrdlb/widgetpc.git
+### [widget: js代码库](https://github.com/zmrdlb/widgetpc)
+  
+  git add submodule https://github.com/zmrdlb/widgetpc.git
  
       
 ## 3. section
